@@ -1,0 +1,24 @@
+// main: {
+//       educations: [
+//         'Harvard University',
+//         'Massachusetts Institute of Technology',
+//         'University of California, Berkeley',
+//         'University of Cambridge',
+//         'University of Oxford',
+//         'Swiss Federal Institute of Technology Zurich',
+//         'Imperial College London',
+//       ],
+//       certificates: [
+//         {
+//           name: 'Continuing Education Units',
+//           id: 1234,
+//         },
+//         {
+//           name: 'Course Completion Certificates',
+//           id: 4312,
+//         },
+//         {
+//           name: 'Professional Certificat',
+//           id: 5472,
+//         },
+//       ],

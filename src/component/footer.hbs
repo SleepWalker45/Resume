@@ -1,0 +1,18 @@
+<footer>
+    <hr />
+    <br />
+    {{#with footer.social}}
+    {{>link href=email.href text=email.text}}
+    {{>link href=phone.href text=phone.text}}
+    {{>link href=linkedin.href text=linkedin.text noLine=true}}
+    {{/with}}
+    <br>
+    <br>
+    <div>
+    Copyright by {{header.name.firstname}} {{header.name.lastname}}
+    </div>
+    <br>
+    <div>
+        <address>{{header.address}}</address>
+    </div>
+</footer>
