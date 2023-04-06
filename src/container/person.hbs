@@ -1,0 +1,29 @@
+<div>
+    <main>
+        <section>
+            {{> title title="Person"}}
+
+            <br>
+
+            <div>
+                {{#with person}}
+                <div>Name: <b>{{name}}</b></div>
+                <div>Gender: <b>{{gender}}</b></div>
+                <div>Age: <b>{{age}}</b></div>
+
+                <br>
+                <hr>
+
+                <div>
+                    {{#with address}}
+                        <div>Address: <em>{{country}}, {{street}}, {{city}};</em></div>
+                        <div>State: {{state}} ({{zip}});</div>
+                        
+                    {{/with}}
+                </div>
+                
+                {{/with}}
+            </div>
+        </section>
+    </main>
+</div>
