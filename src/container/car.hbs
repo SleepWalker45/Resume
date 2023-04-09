@@ -1,0 +1,136 @@
+<main>
+  <h3>{{make}}
+    <span class='badge bg-secondary'>{{model}}
+      <sup>{{year}}</sup><sub>{{color}}</sub></span></h3>
+  <br />
+
+  {{! #about seats }}
+  <p>
+    <button
+      class='btn btn-dark'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#collapseWidthExample'
+      aria-expanded='false'
+      aria-controls='collapseWidthExample'
+    >
+      Seats
+    </button>
+  </p>
+  <div style='min-height: 120px;'>
+    <div
+      class='collapse collapse-horizontal'
+      id='collapseWidthExample'
+    >
+      <div class='card card-body' style='width: 300px;'>
+        {{#with features.interior.seats}}
+          <div>material: <b>'{{material}}'</b></div>
+          <div>color: <b>'{{color}}'</b></div>
+          <div><b>{{#if heated}} Heated {{/if}}</b></div>
+          <div><b>{{#if ventilated}}
+                Ventilated
+              {{/if}}</b></div>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  {{!-- <p>
+    <a
+      class='btn btn-dark'
+      data-bs-toggle='collapse'
+      href='#collapseExample'
+      role='button'
+      aria-expanded='false'
+      aria-controls='collapseExample'
+    >
+      Seats
+    </a>
+  </p>
+  <div class='collapse' id='collapseExample'>
+    <div class='card card-body'>
+      {{#with features.interior.seats}}
+        <div>material: <b>'{{material}}'</b></div>
+        <div>color: <b>'{{color}}'</b></div>
+        <div><b>{{#if heated}} Heated {{/if}}</b></div>
+        <div><b>{{#if ventilated}}
+              Ventilated
+            {{/if}}</b></div>
+      {{/with}}
+    </div>
+  </div> --}}
+  {{!  }}
+
+  <p>
+    <button
+      class='btn btn-dark'
+      type='button'
+      data-bs-toggle='collapse'
+      data-bs-target='#collapseWidthExample'
+      aria-expanded='false'
+      aria-controls='collapseWidthExample'
+    >
+      Dashboard
+    </button>
+  </p>
+  <div style='min-height: 120px;'>
+    <div
+      class='collapse collapse-horizontal'
+      id='collapseWidthExample'
+    >
+      <div class='card card-body' style='width: 300px;'>
+        {{#with features.interior.dashboard}}
+          <div>material: <b>'{{material}}'</b></div>
+          <div>color: <b>'{{color}}'</b></div>
+          <div>
+            <b>display:</b>
+            {{#with display}}
+              <ul>
+                <div>type: <b>{{type}}</b></div>
+                <div>size: <b>{{size}}</b></div>
+                <div>resolution: <b>{{resolution}}</b></div>
+                <div>{{#if touchscreen}}
+                    <b>{{touchscreen}}</b>
+                  {{/if}}</div>
+
+              </ul>
+            {{/with}}
+          </div>
+        {{/with}}
+      </div>
+    </div>
+  </div>
+  {{!-- <p>
+    <a
+      class='btn btn-dark'
+      data-bs-toggle='collapse'
+      href='#Dashboard'
+      role='button'
+      aria-expanded='false'
+      aria-controls='collapseExample'
+    >
+      Dashboard
+    </a>
+  </p>
+  <div class='collapse' id='collapseExample'>
+    <div class='card card-body'>
+      {{#with features.interior.dashboard}}
+        <div>material: <b>'{{material}}'</b></div>
+        <div>color: <b>'{{color}}'</b></div>
+        <div>
+          <b>display:</b>
+          {{#with display}}
+            <ul>
+              <div>type: <b>{{type}}</b></div>
+              <div>size: <b>{{size}}</b></div>
+              <div>resolution: <b>{{resolution}}</b></div>
+              <div>{{#if touchscreen}}
+                  <b>{{touchscreen}}</b>
+                {{/if}}</div>
+
+            </ul>
+          {{/with}}
+        </div>
+      {{/with}}
+    </div>
+  </div> --}}
+</main>
