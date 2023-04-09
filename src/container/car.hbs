@@ -1,136 +1,385 @@
 <main>
-  <h3>{{make}}
+    
+  <h2>{{make}}
     <span class='badge bg-secondary'>{{model}}
-      <sup>{{year}}</sup><sub>{{color}}</sub></span></h3>
+      <sup>{{year}}</sup><sub>{{color}}</sub></span></h2>
   <br />
 
-  {{! #about seats }}
-  <p>
-    <button
-      class='btn btn-dark'
-      type='button'
-      data-bs-toggle='collapse'
-      data-bs-target='#collapseWidthExample'
-      aria-expanded='false'
-      aria-controls='collapseWidthExample'
-    >
-      Seats
-    </button>
-  </p>
-  <div style='min-height: 120px;'>
-    <div
-      class='collapse collapse-horizontal'
-      id='collapseWidthExample'
-    >
-      <div class='card card-body' style='width: 300px;'>
-        {{#with features.interior.seats}}
-          <div>material: <b>'{{material}}'</b></div>
-          <div>color: <b>'{{color}}'</b></div>
-          <div><b>{{#if heated}} Heated {{/if}}</b></div>
-          <div><b>{{#if ventilated}}
-                Ventilated
-              {{/if}}</b></div>
-        {{/with}}
-      </div>
-    </div>
-  </div>
-  {{!-- <p>
-    <a
-      class='btn btn-dark'
-      data-bs-toggle='collapse'
-      href='#collapseExample'
-      role='button'
-      aria-expanded='false'
-      aria-controls='collapseExample'
-    >
-      Seats
-    </a>
-  </p>
-  <div class='collapse' id='collapseExample'>
-    <div class='card card-body'>
-      {{#with features.interior.seats}}
-        <div>material: <b>'{{material}}'</b></div>
-        <div>color: <b>'{{color}}'</b></div>
-        <div><b>{{#if heated}} Heated {{/if}}</b></div>
-        <div><b>{{#if ventilated}}
-              Ventilated
-            {{/if}}</b></div>
-      {{/with}}
-    </div>
-  </div> --}}
-  {{!  }}
-
-  <p>
-    <button
-      class='btn btn-dark'
-      type='button'
-      data-bs-toggle='collapse'
-      data-bs-target='#collapseWidthExample'
-      aria-expanded='false'
-      aria-controls='collapseWidthExample'
-    >
-      Dashboard
-    </button>
-  </p>
-  <div style='min-height: 120px;'>
-    <div
-      class='collapse collapse-horizontal'
-      id='collapseWidthExample'
-    >
-      <div class='card card-body' style='width: 300px;'>
-        {{#with features.interior.dashboard}}
-          <div>material: <b>'{{material}}'</b></div>
-          <div>color: <b>'{{color}}'</b></div>
-          <div>
-            <b>display:</b>
-            {{#with display}}
-              <ul>
-                <div>type: <b>{{type}}</b></div>
-                <div>size: <b>{{size}}</b></div>
-                <div>resolution: <b>{{resolution}}</b></div>
-                <div>{{#if touchscreen}}
-                    <b>{{touchscreen}}</b>
-                  {{/if}}</div>
-
-              </ul>
-            {{/with}}
-          </div>
-        {{/with}}
-      </div>
-    </div>
-  </div>
-  {{!-- <p>
-    <a
-      class='btn btn-dark'
-      data-bs-toggle='collapse'
-      href='#Dashboard'
-      role='button'
-      aria-expanded='false'
-      aria-controls='collapseExample'
-    >
-      Dashboard
-    </a>
-  </p>
-  <div class='collapse' id='collapseExample'>
-    <div class='card card-body'>
-      {{#with features.interior.dashboard}}
-        <div>material: <b>'{{material}}'</b></div>
-        <div>color: <b>'{{color}}'</b></div>
-        <div>
-          <b>display:</b>
-          {{#with display}}
-            <ul>
-              <div>type: <b>{{type}}</b></div>
-              <div>size: <b>{{size}}</b></div>
-              <div>resolution: <b>{{resolution}}</b></div>
-              <div>{{#if touchscreen}}
-                  <b>{{touchscreen}}</b>
-                {{/if}}</div>
-
-            </ul>
+  
+  {{! INTERIOR }}
+  <h3>Features</h3>
+  
+  <ul>
+    <h4>Interior</h4>
+  <section>
+    {{! #about seats }}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#Seats'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Seats
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='Seats'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.interior.seats}}
+            <div>material: <b>'{{material}}'</b></div>
+            <div>color: <b>'{{color}}'</b></div>
+            <div><b>{{#if heated}} Heated {{/if}}</b></div>
+            <div><b>{{#if ventilated}}
+                  Ventilated
+                {{/if}}</b></div>
           {{/with}}
         </div>
-      {{/with}}
+      </div>
     </div>
-  </div> --}}
+    {{! about Dashboard }}
+
+
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#Dashboard'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Dashboard
+      </button>
+    </p>
+    <div style=''>
+      <div
+        class='collapse collapse-horizontal'
+        id='Dashboard'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.interior.dashboard}}
+            <div>material: <b>'{{material}}'</b></div>
+            <div>color: <b>'{{color}}'</b></div>
+            <div>
+              <b>display:</b>
+              {{#with display}}
+                <ul>
+                  <div>type: <b>{{type}}</b></div>
+                  <div>size: <b>{{size}}</b></div>
+                  <div>resolution:
+                    <b>{{resolution}}</b></div>
+                  <div>{{#if touchscreen}}
+                      <b>{{touchscreen}}</b>
+                    {{/if}}</div>
+
+                </ul>
+              {{/with}}
+            </div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    {{!  }}
+
+    {{!-- Audio --}}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#audio'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Audio
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='audio'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.interior.audio}}
+            <div>system: <b>'{{system}}'</b></div>
+            <div>speakers: <b>'{{speakers}}'</b></div>
+            <div>{{#if subwoofer}}
+                <b>Subwoofer</b>
+              {{/if}}</div>
+            <div>{{#if bluetooth}}
+                <b>Bluetooth</b>
+              {{/if}}</div>
+            <div>{{#if USB}}
+                <b>USB</b>
+              {{/if}}</div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{! INTERIOR--------- }}
+
+    {{!-- Exterior -----------}}
+  <h4>Exterior</h4>
+  <section>
+    {{! Wheels }}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#wheels'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Wheels
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='wheels'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.exterior.wheels}}
+            <div>size: <b>'{{size}}'</b></div>
+            <div>type: <b>'{{type}}'</b></div>
+            <div>color: <b>'{{color}}'</b></div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    {{! Wheels }}
+
+    {{! HeadLights }}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#headlights'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Headlights
+      </button>
+    </p>
+    <div style=''>
+      <div
+        class='collapse collapse-horizontal'
+        id='headlights'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.exterior.headlights}}
+            <div>type: <b>'{{type}}'</b></div>
+            <div>brightness: <b>'{{brightness}}'</b></div>
+            <div>{{#if automatic}} Automatic {{/if}}</b></div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+    {{! HeadLights }}
+
+    {{!-- SunRoof --}}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#sunroof'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Sunroof
+      </button>
+    </p>
+    <div style=''>
+      <div
+        class='collapse collapse-horizontal'
+        id='sunroof'
+      >
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.exterior.sunroof}}
+            <div>type: <b>'{{type}}'</b></div>
+            <div>size: <b>'{{size}}'</b></div>
+            <div>{{#if automatic}} Automatic {{/if}}</b></div>
+          {{/with}}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{!-- Exterior -----------}}
+
+
+  {{!-- Safety --}}
+  <h4>Safety</h4>
+  <section>
+    {{!-- Airbags --}}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#airbags'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Airbags
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='airbags'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.safety.airbags}}
+            <div>front: <b>'{{front}}'</b></div>
+            <div>side: <b>'{{side}}'</b></div>
+            <div>knee: <b>'{{knee}}'</b></div>
+            <div>rear: <b>'{{rear}}'</b></div>
+            {{/with}}
+        </div>
+      </div>
+    </div>
+    {{!-- Airbags --}}
+
+    {{!-- assistance --}}
+    <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#assistance'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Assistance
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='assistance'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with features.safety.assistance}}
+            <div>{{#if blind_spot_monitoring}} <b>Blind spot monitoring</b> {{/if}}</div>
+            <div>{{#if rear_cross_traffic_alert}} <b>Rear cross traffic alert</b> {{/if}}</div>
+            <div>{{#if lane_departure_warning}} <b>Lane departure warning</b> {{/if}}</div>
+            <div>{{#if adaptive_cruise_control}} <b>Adaptive cruise control</b> {{/if}}</div>
+            <div>{{#if collision_warning}} <b>Collision warning</b> {{/if}}</div>
+            {{/with}}
+        </div>
+      </div>
+    </div>
+    {{!-- assistance --}}
+
+
+  </section>
+  </ul>
+  {{!-- /Features --}}
+
+    {{!-- Engine --}}
+  <h3>Engine</h3>
+  <ul>
+    
+    <section>
+        <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#engine'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Engine
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='engine'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with engine}}
+            <div>type: <b>'{{type}}'</b></div>
+            <div>displacement: <b>'{{displacement}}'</b></div>
+            <div>horsepower: <b>'{{horsepower}}'</b></div>
+            <div>torque: <b>'{{torque}}'</b></div>
+            <div>transmission:
+                <ul>
+                    {{#with transmission}}
+                        <div>type: <b>'{{type}}'</b></div>
+                        <div>gears: <b>'{{gears}}'</b></div>
+                    {{/with}}
+                </ul>
+            </div>
+            {{/with}}
+        </div>
+      </div>
+    </div>
+    </section>
+  </ul>
+  {{!-- /Engine --}}
+
+    {{!-- fuel_economy --}}
+  <h3>Fuel Economy</h3>
+  <section>
+    <ul>
+        <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#fuel_economy'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Fuel economy
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='fuel_economy'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with fuel_economy}}
+            <div>city: <b>'{{city}}'</b></div>
+            <div>highway: <b>'{{highway}}'</b></div>
+            <div>combined: <b>'{{combined}}'</b></div>
+            {{/with}}
+        </div>
+      </div>
+    </div>
+    </ul>
+  </section>
+  {{!-- /Fuel economy --}}
+
+  {{!-- price --}}
+  <h3>Price</h3>
+  <section>
+    <ul>
+        <p>
+      <button
+        class='btn btn-dark'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#price'
+        aria-expanded='false'
+        aria-controls='collapseWidthExample'
+      >
+        Price
+      </button>
+    </p>
+    <div style=''>
+      <div class='collapse collapse-horizontal' id='price'>
+        <div class='card card-body' style='width: 300px;'>
+          {{#with price}}
+            <div>base: <b>'{{base}}'</b></div>
+            <div>destination: <b>'{{destination}}'</b></div>
+            <div>total: <b>'{{total}}'</b></div>
+            <div>options:
+                <ul>
+                    {{#with options}}
+                    <div>navigation: <b>'{{navigation}}'</b></div>
+                    <div>moonroof: <b>'{{moonroof}}'</b></div>
+                    <div>premium_paint: <b>'{{premium_paint}}'</b></div>
+                    {{/with}}
+                </ul>
+            </div>
+            {{/with}}
+        </div>
+      </div>
+    </div>
+    </ul>
+  </section>
+
 </main>
