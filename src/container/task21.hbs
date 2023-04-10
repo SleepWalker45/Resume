@@ -1,17 +1,71 @@
 <main>
-  {{! heading }}
-  {{#with heading}}
-  <section>
-    <div class='card'>
-      <div class='card-body'>
-        {{!-- main --}}
-        {{#with main}}
-        <div class='display-1'>{{title}}</div>
-        {{/with}}
-        {{!-- /main --}}
-      </div>
-    </div>
+  {{! Heading }}
+  <section class='card card-body'>
+    {{#with heading}}
+      {{! Main }}
+      {{#with main}}
+        <div class='card'>
+          <div class='card-body'>
+            <h1>{{title}}</h1>
+            <p>{{text}}</p>
+            <div><button class='btn btn-primary'>{{#with
+                  button_text
+                }} {{solid}} {{/with}}</button></div>
+            <br />
+            <div><button
+                class='btn btn-outline-primary'
+              >{{#with button_text}}
+                  {{outline}}
+                {{/with}}</button></div>
+          </div>
+        </div>
+      {{/with}}
+      {{! /Main }}
+
+      {{! second }}
+      {{#with second}}
+        <div class='card'>
+          <div class='card-body'>
+            <h2>{{title}}</h2>
+            <p>{{text}}</p>
+            {{! button_text }}
+            {{#with button_text}}
+              <div><button
+                  class='btn btn-secondary'
+                >{{solid}}</button></div>
+              <br />
+              <div><button
+                  class='btn btn-outline-secondary'
+                >{{outline}}</button></div>
+            {{/with}}
+            {{! /button_text }}
+          </div>
+        </div>
+      {{/with}}
+      {{! /second }}
+
+      {{! subblock }}
+      {{#with subblock}}
+        <div class='card'>
+          <div class='card-body'>
+            <h2>{{title}}</h2>
+            <p>{{text}}</p>
+            {{! button_text }}
+            {{#with button_text}}
+              <div><button
+                  class='btn btn-dark'
+                >{{solid}}</button></div>
+              <br />
+              <div><button
+                  class='btn btn-outline-dark'
+                >{{outline}}</button></div>
+            {{/with}}
+            {{! /button_text }}
+          </div>
+        </div>
+      {{/with}}
+      {{! /subblock }}
+    {{/with}}
   </section>
-  {{/heading}}
-  {{!-- /heading --}}
+  {{! /Heading }}
 </main>
