@@ -1,0 +1,17 @@
+<main>
+  {{! heading }}
+  {{#with heading}}
+  <section>
+    <div class='card'>
+      <div class='card-body'>
+        {{!-- main --}}
+        {{#with main}}
+        <div class='display-1'>{{title}}</div>
+        {{/with}}
+        {{!-- /main --}}
+      </div>
+    </div>
+  </section>
+  {{/heading}}
+  {{!-- /heading --}}
+</main>
