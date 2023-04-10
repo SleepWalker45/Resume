@@ -1,0 +1,119 @@
+<main>
+  <h2>{{name}}</h2>
+  <br />
+
+  {{! users }}
+  <section>
+    <div><b>Users:</b>
+      <ul>
+        {{#each users}}
+          <li>
+            <div>{{id}}</div>
+            <div>{{name}}</div>
+            <div>{{gender}}</div>
+            <div>{{age}}</div>
+            {{! friends }}
+            <div>friends:
+              <ul>
+                {{#each friends}}
+                  <li>
+                    <div>{{id}}</div>
+                    <div>{{name}}</div>
+                    <div>{{gender}}</div>
+                    <div>{{age}}</div>
+                    {{! friends.mutual_friends }}
+                    <div>
+                      <ul>
+                        {{#each mutual_friends}}
+                          <li>
+                            <div>{{id}}</div>
+                            <div>{{name}}</div>
+                            <div>{{gender}}</div>
+                            <div>{{age}}</div>
+                            {{! friends.mutual_friends.mutual_friends }}
+                            <div>
+                              <ul>
+                                {{#each mutual_friends}}
+                                  <li>
+                                    <div>{{id}}</div>
+                                    <div>{{name}}</div>
+                                    <div>{{gender}}</div>
+                                    <div>{{age}}</div>
+                                  </li>
+                                {{/each}}
+                              </ul>
+                            </div>
+                            {{! /friends.mutual_friends.mutual_friends }}
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                    {{! /friends.mutual_friends }}
+
+                    {{! groups }}
+                    <div>
+                      <ul>
+                        {{#each groups}}
+                          <li>
+                            <div>{{id}}</div>
+                            <div>{{name}}</div>
+                            <div>{{description}}</div>
+                            {{! members }}
+                            <div>
+                              <ul>
+                                {{#each members}}
+                                  <li>
+                                    <div>{{id}}</div>
+                                    <div>{{name}}</div>
+                                    <div>{{gender}}</div>
+                                    <div>{{age}}</div>
+                                  </li>
+                                {{/each}}
+                              </ul>
+                            </div>
+                            {{! /members }}
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                    {{! /groups }}
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+            {{! /friends }}
+
+            {{! groups }}
+            <div>
+              <ul>
+                {{#each groups}}
+                  <li>
+                    <div>{{id}}</div>
+                    <div>{{name}}</div>
+                    <div>{{description}}</div>
+                    {{! members }}
+                    <div>
+                      <ul>
+                        {{#each members}}
+                          <li>
+                            <div>{{id}}</div>
+                            <div>{{name}}</div>
+                            <div>{{gender}}</div>
+                            <div>{{age}}</div>
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                    {{! /members }}
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+            {{! /groups }}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+  {{! /users }}
+</main>
