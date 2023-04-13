@@ -1,0 +1,154 @@
+<main class='p-4 row'>
+
+  {{! navigation }}
+  {{#with navigation}}
+    <section class='col-12 card'>
+      <div class='row'>
+        <h1 class='col-4 py-3 m-0'>{{Logo}}</h1>
+        <div class='col-2'></div>
+        <div class='col-6 nav nav-tabs py-3 ps-5'>
+          {{#each links}}
+            <div class='nav-item'>
+              <a
+                class='nav-link px-2'
+                href='{{href}}'
+              >{{text}}</a>
+            </div>
+          {{/each}}
+          <div class='nav-item'>
+            <a class='nav-link disabled'>Disabled</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/with}}
+  {{! /navigation }}
+
+  {{! newsBlock }}
+  {{#with newsBlock}}
+    <section class='my-5'>
+      <h2 class='text-center mb-5'>{{title}}</h2>
+
+      <div class='col-12'>
+        <div class='row g-4'>
+          {{#each cards}}
+            <div class='col-3'>
+              <div class='card'>
+                <div class='card-header'>
+                  <div class='mb-2'>{{title}}</div>
+                  {{#if isNew}}
+                    <span
+                      class='badge text-bg-success'
+                    >New</span>
+                  {{/if}}
+                  {{#if isTop}}
+                    <span
+                      class='badge text-bg-danger'
+                    >Top</span>
+                  {{/if}}
+                </div>
+                <div class='card-body'>
+                  <p>{{description}}</p>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+  {{/with}}
+  {{! /newsBlock }}
+
+  <hr class='my-5' />
+
+  {{! goodsBlock }}
+  {{#with goodsBlock}}
+    <section class='col-12'>
+      <nav class='nav nav-tabs mb-4'>
+        {{#each tabs}}
+          <div class='nav-item'>
+            <a class='nav-link
+                    {{#if isActive}} active {{/if}}
+                    {{#if isDisabled}} disabled {{/if}}'>{{text}}
+
+            </a>
+          </div>
+        {{/each}}
+      </nav>
+      <div class="row g-3">
+        {{#each cards}}
+        <div class="col-4">
+            <div class="card">
+                <img
+                    class='card-img-top'
+                    src='{{image}}'
+                />
+                <div class="card-body">
+                    <h6>{{title}}
+                        {{#if isHot}} <span class="badge text-bg-warning">Hot</span>{{/if}}
+                        {{#if isNew}} <span class="badge text-bg-primary">New</span>{{/if}}
+                    </h6>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+  {{/with}}
+  {{! /goodsBlock }}
+
+  <hr class="my-5">
+
+  {{!-- subscribe --}}
+  {{#with subscribe}}
+  <section class="col-12 card card-body text-bg-dark">
+    <h2 class="mb-4">{{header}}</h2>
+    <p>{{description}}</p>
+    {{#each buttons}}
+    <div>
+        <a class="btn btn-primary mb-2" href="{{link}}">{{text}}</a>
+        </div>
+    {{/each}}
+  </section>
+  {{/with}}
+  {{!-- /subscribe --}}
+
+  <hr class="my-5">
+
+  {{!-- service --}}
+  {{#with service}}
+  <section class="col-12 card card-body text-bg-success text-center">
+    <h2 class="mb-4">{{title}}</h2>
+    <p>{{description}}</p>
+    {{#each buttons}}
+        <div>
+            <a class="btn btn-primary mb-4" href="{{link}}">{{text}}</a>
+        </div>
+    {{/each}}
+  </section>
+  {{/with}}
+  {{!-- /service --}}
+
+  <hr class="my-5">
+
+  {{!-- footer --}}
+  {{!-- {{#with footer}} --}}
+  <section class="col-12">
+    <div class="row">
+      {{#each footer}}
+      <div class="col-2">
+        <nav class="nav nav-tabs flex-column">
+          {{#each this}}
+          <div class="nav-item m-2">
+            <a  class="nav-link p-0">{{text}}</a>
+          </div>
+          {{/each}}
+        </nav>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+  {{!-- {{/with}} --}}
+  {{!-- /footer --}}
+</main>
