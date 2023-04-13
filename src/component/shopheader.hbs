@@ -1,0 +1,23 @@
+{{! navigation }}
+{{#with navigation}}
+  <section class='col-12 card'>
+    <div class='row'>
+      <h1 class='col-4 py-3 m-0'>{{Logo}}</h1>
+      <div class='col-2'></div>
+      <div class='col-6 nav nav-tabs py-3 ps-5'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a
+              class='nav-link px-2'
+              href='{{href}}'
+            >{{text}}</a>
+          </div>
+        {{/each}}
+        <div class='nav-item'>
+          <a class='nav-link disabled'>Disabled</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{/with}}
+{{! /navigation }}

@@ -1,0 +1,15 @@
+<section class='col-12'>
+  <div class='row'>
+    {{#each footer}}
+      <div class='col-2'>
+        <nav class='nav nav-tabs flex-column'>
+          {{#each this}}
+            <div class='nav-item m-2'>
+              <a class='nav-link p-0'>{{text}}</a>
+            </div>
+          {{/each}}
+        </nav>
+      </div>
+    {{/each}}
+  </div>
+</section>
