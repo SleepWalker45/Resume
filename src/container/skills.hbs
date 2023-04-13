@@ -6,11 +6,11 @@
 <div>
   <main>
 
-    <section>
+    <section class="mb-5">
       {{> title big=true title="All Skills"}}
       <ul>
         {{#each main.skills}}
-          <li>
+          <li class="m-0">
             {{name}}
             ({{point}})
             {{#if isEnd}}
@@ -25,7 +25,7 @@
       {{> title title=" My hobbies"}}
       <ol>
         {{#each main.hobbies}}
-          <li>
+          <li class="m-0">
             {{name}}
             {{#if isMain}}
               (favourite)

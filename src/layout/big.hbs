@@ -3,7 +3,7 @@
   І котрий обгортає код container файлів для будь-яких ендпоїнтів
 }}
 
-<html>
+<html class="p-5">
 
   <head>
     <title>
@@ -19,11 +19,13 @@
   <body>
     {{> nav}}
     
-    <br>
-    <hr>
+    <hr class="my-4">
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
-    {{{body}}}
+    <div class="p-3">
+      {{{body}}}
+    </div>
 
+    <hr class="my-4">
 
 	  {{> footer}}
   </body>
