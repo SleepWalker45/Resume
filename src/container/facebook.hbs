@@ -13,7 +13,7 @@
             <div>{{gender}}</div>
             <div>{{age}}</div>
             {{! friends }}
-            <div>friends:
+            <div>Friends:
               <ul>
                 {{#each friends}}
                   <li>
@@ -50,33 +50,6 @@
                     </div>
                     {{! /friends.mutual_friends }}
 
-                    {{! groups }}
-                    <div>
-                      <ul>
-                        {{#each groups}}
-                          <li>
-                            <div>{{id}}</div>
-                            <div>{{name}}</div>
-                            <div>{{description}}</div>
-                            {{! members }}
-                            <div>
-                              <ul>
-                                {{#each members}}
-                                  <li>
-                                    <div>{{id}}</div>
-                                    <div>{{name}}</div>
-                                    <div>{{gender}}</div>
-                                    <div>{{age}}</div>
-                                  </li>
-                                {{/each}}
-                              </ul>
-                            </div>
-                            {{! /members }}
-                          </li>
-                        {{/each}}
-                      </ul>
-                    </div>
-                    {{! /groups }}
                   </li>
                 {{/each}}
               </ul>
@@ -84,7 +57,7 @@
             {{! /friends }}
 
             {{! groups }}
-            <div>
+            <div>{{#if groups}} Groups: {{/if}}
               <ul>
                 {{#each groups}}
                   <li>
