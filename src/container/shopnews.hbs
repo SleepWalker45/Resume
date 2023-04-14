@@ -1,0 +1,62 @@
+<main class='p-4 row'>
+    {{> shopheader Logo="ShopNews"}}
+
+    {{> breadcrumb}}
+
+    {{!-- newsData --}}
+    {{#with newsData}}
+    <section class="col-12">
+        <img src="{{photo}}">
+        <div class="my-3 mb-4">
+            <h1>{{head.heading}}</h2>
+            <p>{{head.description}}</p>
+        </div>
+
+        <div class="my-3">
+            {{#each body}}
+            <div class="my-3">
+                <h5>{{title}}</h4>
+                <p>{{text}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{!-- /newsData --}}
+
+    <hr class="my-5">
+
+    {{!-- newsOtherBlock --}}
+    {{#with newsOtherBlock}}
+    <section class="col-12">
+        <h3 class="text-center mb-4">{{title}}</h3>
+        <div class="row">
+            {{#each cards}}
+            <div class="col-3">
+                <div class="card text-bg-dark">
+                    <div class="card-header">
+                        <div class="card-title">{{title}}
+                            {{#if isTop}} <span class="badge text-bg-danger">Top</span>{{/if}}
+                            {{#if idNew}} <span class="badge text-bg-success">New</span>{{/if}}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </section>
+    {{/with}}
+    {{!-- /newsOtherBlock --}}
+
+    <hr class="my-5">
+
+    {{> shopaction}}
+
+    <hr class="my-5">
+
+    {{> shopfooter}}
+</main>
