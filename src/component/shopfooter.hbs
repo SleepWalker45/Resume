@@ -5,7 +5,9 @@
         <nav class='nav nav-tabs flex-column'>
           {{#each this}}
             <div class='nav-item m-2'>
-              <a class='nav-link p-0'>{{text}}</a>
+              <a 
+              class='nav-link p-0
+              {{#if @last}} disabled {{/if}}'>{{text}}</a>
             </div>
           {{/each}}
         </nav>
