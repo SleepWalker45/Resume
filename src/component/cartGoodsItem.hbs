@@ -1,0 +1,26 @@
+<div class="card card-body my-2">
+    <div class="row">
+        <img class="col-2" src="{{image}}">
+        <div class="col-5">
+            <h5>{{name}}</h5>
+            <p>{{description}}</p>
+        </div>
+
+        <div class="col-2">
+            <div>{{price.title}}</div>
+            <div>{{price.value}}</div>
+        </div>
+
+        <div class="col-1">{{amount}}</div>
+
+        <div class="col-2">
+            {{#each buttons}}
+            <div>
+                <button class="btn mb-3
+            {{#if isPrimary}} btn-primary {{/if}}
+            {{#if isDanger}} btn-outline-danger {{/if}}">{{text}}</button>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

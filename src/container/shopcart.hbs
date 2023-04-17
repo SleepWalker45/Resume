@@ -1,0 +1,60 @@
+<main class='p-4 row'>
+    {{> shopheader Logo="ShopCart"}}
+
+    {{!-- header --}}
+    {{#with header}}
+        <section class="mt-5">
+            <h1 class="mb-4">{{title}}</h1>
+            <button class="btn btn-outline-secondary" href="{{button.link}}">
+                {{button.text}}
+            </button>
+        </section>
+    {{/with}}
+    {{!-- /header --}}
+
+    <hr class="my-5">
+
+    {{!-- goodsBlock --}}
+    <section class="col-12">
+        {{#each goodsBlock}}
+        {{> cartGoodsItem}}
+        {{/each}}
+    </section>
+    {{!-- /goodsBlock --}}
+
+    <hr class="my-5">
+
+    {{!-- total --}}
+    {{#with total}}
+    <section>
+        <h2>{{title}}</h2>
+        <h2>{{amount}}</h2>
+        <p>{{delivery}}</p>
+        {{#each buttons}}
+        <div class="my-3">
+            <a class="btn 
+            {{#if isSuccess}} btn-primary {{/if}}
+            {{#if isOutline}} btn-outline-primary {{/if}}"
+            href="{{link}}">{{text}}</a>
+        </div>
+        {{/each}}
+    </section>
+    {{/with}}
+    {{!-- /total --}}
+
+    <hr class="my-5">
+
+    {{!-- goodsOtherBlock --}}
+    {{> goodsOtherBlock}}
+    {{!-- /goodsOtherBlock --}}
+
+    <hr class="my-5">
+
+    {{!-- subscribe --}}
+  {{> subscribeBlocks}}
+  {{!-- /subscribe --}}
+
+  <hr class="my-5">
+
+  {{> shopfooter}}
+</main>
