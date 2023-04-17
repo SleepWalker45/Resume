@@ -1,0 +1,14 @@
+{{#with subscribe}}
+  <section class='col-12 card card-body text-bg-dark'>
+    <h2 class='mb-4'>{{header}}</h2>
+    <p>{{description}}</p>
+    {{#each buttons}}
+      <div>
+        <a
+          class='btn btn-primary mb-2'
+          href='{{link}}'
+        >{{text}}</a>
+      </div>
+    {{/each}}
+  </section>
+{{/with}}
