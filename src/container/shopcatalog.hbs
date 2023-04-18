@@ -1,0 +1,116 @@
+<main class='p-4 row'>
+    {{> shopheader Logo="ShopCatalog"}}
+    {{> breadcrumb}}
+
+    <h1>{{header}}</h1>
+
+    {{#each sortBlock}}
+        <div class="col-3 {{#if @first}}ps-3 pe-1 {{else}} px-1 {{/if}} my-3">
+            <select class="form-select">
+                <option selected>{{placeholder}}</option>
+                {{#each options}}
+                    <option value="{{value}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+    {{/each}}
+
+    {{!-- filterBlock --}}
+    {{#with filterBlock}}
+    <section class="col-4">
+        <div class="list-group">
+            <div class="list-group-item">
+                <div class="mb-2">{{sellers.title}}</div>
+                {{#each sellers.list}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox">
+                        <lable class="form-label">{{value}}</lable>
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="list-group-item">
+                <div class="mb-2">{{brands.title}}</div>
+                <input class="form-control my-2" placeholder="{{brands.input.placeholder}}">
+                {{#each brands.options}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox">
+                        <lable class="form-label">{{value}}</lable>
+                    </div>
+                {{/each}}
+            </div>
+
+            <div class="list-group-item">
+                <div class="mb-2">{{price.title}}</div>
+                <input class="form-control my-1" placeholder="{{price.range.from}}">
+                <input class="form-control my-2" placeholder="{{price.range.to}}">
+                <div>
+                    <button class="btn btn-outline-secondary">{{price.button.text}}</button>
+                </div>
+            </div>
+
+            {{#each filterList}}
+            <div class="list-group-item">
+                <div class="mb-2">{{title}}</div>
+                {{#each options}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox">
+                        <lable class="form-label">{{value}}</lable>
+                    </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/with}}
+    {{!-- /filterBlock --}}
+
+    {{!-- goodsList --}}
+    <section class="col-8">
+        <div class="row g-3">
+            {{#each goodsList}}
+            <div class="col-6">
+                <div class="card">
+                    <img class="card-img-top"  src="{{img}}">
+                    <div class="card-body">
+                        <div>
+                            <div class="mb-3">
+                            {{#if isHot}}<span class="badge text-bg-warning">HOT!</span> {{/if}}
+                            {{#if isNew}}<span class="badge text-bg-primary ">New</span> {{/if}}
+                            </div>
+                            <div>
+                            {{#if isFast}}<div class="badge text-bg-success my-1">Fast Delivery</div> {{/if}}
+                            </div>
+                            {{#if isFree}}<div class="badge text-bg-secondary my-1">Free Delivery</div> {{/if}}
+                        </div>
+                        <h5>{{name}}</h5>
+                        <div>{{review.amount}} {{review.text}}</div>
+                        <h5 class="my-2">{{price}}</h5>
+                        <div>{{delivery}}</div>
+
+                        {{#each buttons}}
+                        <div>
+                            <button href="{{link}}"
+                            class="btn my-2
+                            {{#if isPrimary}} btn-primary {{/if}}
+                            {{#if isSecondary}} btn-secondary {{/if}}">{{text}}</button>
+                        </div>
+                        {{/each}}
+
+                        <ul>
+                            {{#each characteristics}}
+                                <li class="my-1">{{title}}: {{value}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{!-- /goodsList --}}
+
+    {{> shopaction}}
+
+    {{> shopfooter}}
+</main>
