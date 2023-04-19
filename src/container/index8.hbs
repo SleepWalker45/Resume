@@ -7,9 +7,13 @@
   </section>
 
   <section>
-    <div><a
-        class='btn btn-primary py-0 px-5'
-        href='/summary'
-      >Summary</a></div>
+    <div class='row g-2'>
+      {{#each pages}}
+        <div class='col-3'><a
+            class='btn btn-primary py-0 px-5 text-capitalize'
+            href='{{href}}'
+          >{{name}}</a></div>
+      {{/each}}
+    </div>
   </section>
 </main>
