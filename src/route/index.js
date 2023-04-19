@@ -65,6 +65,33 @@ router.get('/mainmenu', function (req, res) {
       title: 'Список страниц',
       definition: 'Мои учебные страницы!',
     },
+
+    pages: [
+      { name: 'Summary', href: '/summary' },
+      { name: 'Skills', href: '/skills' },
+      { name: 'Education', href: '/education' },
+      { name: 'work', href: '/work' },
+      { name: 'person', href: '/person' },
+      { name: 'bio', href: '/bio' },
+      { name: 'program', href: '/program' },
+      { name: 'car', href: '/car' },
+      { name: 'js', href: '/js' },
+      { name: 'mac', href: '/mac' },
+      { name: 'facebook', href: '/facebook' },
+      { name: 'bootstrap', href: '/bootstrap' },
+      { name: 'task21', href: '/task21' },
+      { name: 'task22', href: '/task22' },
+      { name: 'card', href: '/card' },
+      { name: 'task31', href: '/task31' },
+      { name: 'shophome', href: '/shophome' },
+      { name: 'shopproduct', href: '/shopproduct' },
+      { name: 'shopnews', href: '/shopnews' },
+      { name: 'shoporder', href: '/shoporder' },
+      { name: 'shopcart', href: '/shopcart' },
+      { name: 'shopprofile', href: '/shopprofile' },
+      { name: 'shopreview', href: '/shopreview' },
+      { name: 'shopcatalog', href: '/shopcatalog' },
+    ],
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
