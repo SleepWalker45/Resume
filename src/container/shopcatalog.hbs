@@ -70,40 +70,7 @@
         <div class="row g-3">
             {{#each goodsList}}
             <div class="col-6">
-                <div class="card">
-                    <img class="card-img-top"  src="{{img}}">
-                    <div class="card-body">
-                        <div>
-                            <div class="mb-3">
-                            {{#if isHot}}<span class="badge text-bg-warning">HOT!</span> {{/if}}
-                            {{#if isNew}}<span class="badge text-bg-primary ">New</span> {{/if}}
-                            </div>
-                            <div>
-                            {{#if isFast}}<div class="badge text-bg-success my-1">Fast Delivery</div> {{/if}}
-                            </div>
-                            {{#if isFree}}<div class="badge text-bg-secondary my-1">Free Delivery</div> {{/if}}
-                        </div>
-                        <h5>{{name}}</h5>
-                        <div>{{review.amount}} {{review.text}}</div>
-                        <h5 class="my-2">{{price}}</h5>
-                        <div>{{delivery}}</div>
-
-                        {{#each buttons}}
-                        <div>
-                            <button href="{{link}}"
-                            class="btn my-2
-                            {{#if isPrimary}} btn-primary {{/if}}
-                            {{#if isSecondary}} btn-secondary {{/if}}">{{text}}</button>
-                        </div>
-                        {{/each}}
-
-                        <ul>
-                            {{#each characteristics}}
-                                <li class="my-1">{{title}}: {{value}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                </div>
+                {{> catalogItem}}
             </div>
             {{/each}}
         </div>
