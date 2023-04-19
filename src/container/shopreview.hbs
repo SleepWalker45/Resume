@@ -78,7 +78,9 @@
     <hr class="my-4">
 
     {{!-- reviewList --}}
-   {{> reviewItem}}
+    {{#each reviewList}}
+        {{> reviewItem}}
+    {{/each}}
     {{!-- /reviewList --}}
 
     {{> shopaction}}
