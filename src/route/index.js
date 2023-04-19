@@ -50,6 +50,25 @@ router.get('/', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+router.get('/mainmenu', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index8',
+
+    name: 'Roman',
+    lastname: 'Yatsenko',
+    logo: 'Resume project',
+
+    main: {
+      title: 'Список страниц',
+      definition: 'Мои учебные страницы!',
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
